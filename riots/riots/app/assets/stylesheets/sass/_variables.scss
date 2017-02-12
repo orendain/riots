@@ -1,0 +1,39 @@
+// Colors
+// --------------------------------------------------
+
+$gray-lighter:           #d5d5d5 !default;
+$gray-lightest:          #eee !default;
+
+$color-violet: #9A7994;
+$color-blue: #AFC1D6;
+$color-green: #47A447;
+$color-orange: orange;
+
+// Team Colors
+$color-t1: $color-violet;
+$color-t2: $color-blue;
+$color-t3: $color-green;
+$color-t4: $color-orange;
+
+
+// Fonts
+// --------------------------------------------------
+
+//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+
+$font-family-source-sans: "Source Sans Pro", Helvetica, Arial, sans-serif !default;
+$font-family-base:        $font-family-source-sans !default;
+
+$font-size-base:          16px !default;
+
+$font-size-small:         14px !default;
+$font-size-medium:        16px !default;
+$font-size-large:         18px !default;
+$font-size-larger:        20px !default;
+
+$font-size-h1:            36px !default;
+$font-size-h2:            30px !default;
+$font-size-h3:            24px !default;
+$font-size-h4:            20px !default;
+$font-size-h5:            18px !default;
+$font-size-h6:            16px !default;

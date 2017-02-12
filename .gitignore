@@ -1,0 +1,25 @@
+# SBT
+logs
+project/project
+target
+tmp
+dist
+.cache
+
+# IntelliJ IDEA
+/.idea
+*.iml
+
+#
+client/target/
+project/project/
+project/target/
+server/target/
+shared/.js/
+shared/.jvm/
+target/
+
+#
+.idea/
+.sass-cache/
+.sbt-server/

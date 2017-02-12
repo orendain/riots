@@ -1,0 +1,46 @@
+<div id="team-stats-panel">
+  @shared.Team.teams.map { case (id, team) => @buildInfoPanel(id, team.name) }
+</div>
+
+@buildInfoPanel(id: Int, name: String) = {
+  <div class="col-xs-6">
+    <div class="teamstats t@id">
+      <header><h2 class="name">@name</h2></header>
+
+      <div class="resources">
+        <span class="title">Resources:</span>
+        <span class="value">Undefined</span>
+      </div>
+
+      <div class="power">
+        <span class="title">Power:</span>
+        <span class="value">Undefined</span>
+      </div>
+
+      <div class="target">
+        <span class="title">Target:</span>
+        <span class="value">Undefined</span>
+      </div>
+
+      <div class="activePlayers">
+        <span class="title">Idlers:</span>
+        <span class="value">Undefined</span>
+      </div>
+
+      <div class="strength">
+        <span class="title">Strength:</span>
+        <span class="value">Undefined</span>
+      </div>
+
+      <div class="speed">
+        <span class="title">Speed:</span>
+        <span class="value">Undefined</span>
+      </div>
+
+      <div class="discount">
+        <span class="title">Discount:</span>
+        <span class="value">Undefined</span>
+      </div>
+    </div>
+  </div>
+}

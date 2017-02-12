@@ -1,0 +1,15 @@
+@import controllers.Login
+@(loginForm: Form[model.LoginForm])(implicit token: play.filters.csrf.CSRF.Token, messages: Messages)
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(helpers.bootstrapInputField.f) }
+
+<div id="login-panel">
+  @form(routes.Login.submitLogin, 'id -> "login-form") {
+    @CSRF.formField
+    @inputText(loginForm("username"), '_label -> "_none", 'placeholder -> "Username")
+    @inputPassword(loginForm("password"), '_label -> "_none", 'placeholder -> "Password")
+    <button type="submit" class="btn btn-big btn-submit">Login</button>
+  }
+</div>

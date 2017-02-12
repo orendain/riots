@@ -1,0 +1,16 @@
+@(registerForm: Form[model.RegisterForm], teams: Seq[(String, String)])(implicit token: play.filters.csrf.CSRF.Token, messages: Messages)
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(helpers.bootstrapInputField.f) }
+
+<div id="registration-panel">
+  @form(routes.Register.submitRegister, 'id -> "register-form") {
+    @CSRF.formField
+    @inputText(registerForm("username"), '_label -> "_none", 'placeholder -> "Username")
+    @inputPassword(registerForm("passwords.password"), '_label -> "_none", 'placeholder -> "Password")
+    @inputPassword(registerForm("passwords.confirmPassword"), '_label -> "_none", 'placeholder -> "Confirm Password", '_error -> registerForm.error("passwords"))
+    @select(registerForm("teamID"), teams, '_label -> "_none", '_default -> "-- Choose a team --")
+    <button type="submit" class="btn btn-big btn-submit">Register</button>
+  }
+</div>

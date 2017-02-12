@@ -1,0 +1,23 @@
+@import components._
+
+@main("The Riots | An MMO Idle Game") {
+  <div class="row">
+    <div class="col-xs-6">
+      @playerStatsPanel()
+      <div class="row">
+        @teamStatsPanel()
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-12">
+          @controlPointsPanel()
+          @tabbedPanel()
+
+          @chatPanel()
+        </div>
+      </div>
+    </div>
+  </div>
+}

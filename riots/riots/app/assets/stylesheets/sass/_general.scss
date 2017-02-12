@@ -1,0 +1,61 @@
+@import "compass/css3/selection";
+
+// HTML
+// ----------------------------
+* {
+  @include selection(#fff7A8, #444);
+}
+
+// Alerts
+// ----------------------------
+.alert {
+  @include border-radius(0);
+  text-align: center;
+  font-size: $font-size-medium;
+
+  &.alert-contact {
+    margin-bottom: 0;
+  }
+}
+
+
+// Content
+// ----------------------------
+#content {
+  margin-bottom: 60px;
+}
+
+
+// Forms
+// ----------------------------
+form {
+  label {
+    font-size: $font-size-large;
+    font-weight: 300;
+  }
+
+  .form-control {
+    //@include input-size-large;
+    border-radius: 0;
+  }
+
+  textarea.form-control {
+    resize: vertical;
+  }
+}
+
+
+// Buttons
+// ----------------------------
+.btn {
+  @include border-radius(0);
+  width: 100%;
+}
+
+.btn-big {
+  //@include button-size-large;
+}
+
+.btn-submit {
+  //@include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}

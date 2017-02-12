@@ -1,0 +1,69 @@
+// Team Stats
+// ----------------------------
+#team-stats-panel {
+  .teamstats {
+    padding: 10px;
+
+    &.t1 {
+      @include background($color-t1);
+    }
+    &.t2 {
+      @include background($color-t2);
+    }
+    &.t3 {
+      @include background($color-t3);
+    }
+    &.t4 {
+      @include background($color-t4);
+    }
+
+    header h2 {
+      margin-top: 0;
+    }
+
+    .title {
+      font-weight: 300;
+    }
+  }
+}
+
+// Control points
+// ----------------------------
+#control-points-panel {
+  @include background(brown);
+  padding: 10px;
+
+  header {
+    text-align: center;
+  }
+}
+
+
+// Chat Panel
+// ----------------------------
+#chat-panel {
+  #chat-msgs {
+    @include background($gray-lightest);
+    border: 1px solid $gray-lighter;
+    height: 300px;
+    padding: 5px 10px;
+    overflow: auto;
+  }
+
+  #chat-input,
+  #chat-send {
+    height: 30px;
+    float: left;
+  }
+
+  #chat-input {
+    width: 85%;
+    border: 1px solid $gray-lighter;
+    border-top: 0;
+    padding: 0 10px;
+
+  }
+  #chat-send {
+    width: 15%;
+  }
+}

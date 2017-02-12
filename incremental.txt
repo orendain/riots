@@ -1,0 +1,223 @@
+Incremental game idea:
+
+Inspired by PvP++, by Cyfer
+
+
+Notes
+  Protect against abusive names (spaces, non-ascii characters, etc.)
+  Players should be gaining XP and thus ranks
+  Allow apps (paid?) to join the fight
+  As an app, a feature is low power usage vs other MMOs
+  Allow players to invite friends via FB, Twitter, link
+
+Goal
+  Player
+
+Stats
+  Damage - checkpoint control, sabotage
+  Armor - checkpoint control, gathering
+  Speed - gathering, sabotage, cooldowns
+  Luck - regularity of random events
+
+  OR
+
+  Strength - checkpoint control
+  Speed - gathering, sabotage
+  Patience - cooldown timers
+  Luck - minigame results
+
+  Power points (currency)
+
+Plot
+  Name: The Riots / The Riot / Riot / Riots
+  Groups fight for control of areas - INDIVIDUALS get to choose where they want to station
+    The Missile Silo - damage++
+    The Hospital - armor++
+    The Gymnasium - speed++
+
+    For now, let's just have two
+      The Stadium - Speed
+      The Temple - Patience
+
+  Different groups fight each other, either building or demolishing
+    Buildings can be upgraded and downgraded(recycled manually or destroyed through minigames)
+      Shooting Range - damage
+      Clothes Store - armor
+      Race Track - speed
+      Workshop - repair
+      Warehouse - gather speed
+
+      OR
+
+      Training Grounds - strength
+      Roads - speed
+      Garden - patience
+      Gambling Den - luck
+      Gathering Slug - Auto Gathering (+X RPS [resources per second])
+      Sabotaging Slug - Auto Sabotaging (+X RPS)
+      (bots not affected by speed. slug/drone/master)
+
+      Through research
+        Robotics (allows bots)
+        Missile System (destroy opponent buildings)
+        Taunt/Haunt/Nightmares (severely hinder opponent speed/strength)
+        Recycle Buildings
+
+
+
+    Team position/role, Your role in the team
+      Gatherers - contribute to producing build points (aka resources)
+      Saboteurs - contribute to team's sabotage effort against opponent resources
+
+Features and Ideas
+  Multiple teams
+    The Janitors
+    The Chess Club
+    The Dropouts
+    The Suits/Dentists/Surgeons
+
+  Help your team by buying time-limited boosts
+  Hinder opponents by buying time-limited boosts
+  Chat (global and team-only, color-coded)
+  List base CPS, player idle CPS, player active CPS
+  Team changing allowed, but reduced personal CPS for some time and not able to vote
+  Chat commands (/clicks /time)
+  Vote before upgrading team structures - at least a % of people must veto to stop it
+  If mobile is slow (no wifi), consider reducing update rate to snail speed
+  +CPS just for having the window open
+  +DPS for idling as well, can target a team of the player's choice
+  Can donate REAL money for special boosts/upgrades
+  Try and MINIMIZE the need for clicking - it may unfairly benefit those that know of autoclickers
+  Unlock research facilities for more upgrades
+  Alternate URL = special dev power. chatbox for admin commands.
+  Allow players to prestige
+  Increment points client-side to simulate higher update rate from server
+
+
+Item Effects
+  Cooldowns (individual)
+    Temporary individual stat bonus (+speed, +strength)
+    One time group stat bonus (+resources, -resources)
+      - should be +gatherBonus/+sabotageBonus so as to differentiate from regular idle/speed
+  Upgrades (individual)
+    Permanent individual stat bonus (+speed, +strength, ..., +powerStoneBonus)
+    Unlock more individual shop items
+    Unlock more upgrades (requires min. XP)
+    Unlock cooldowns (+strength CD, one-time-group-bonus, ...)
+  Upgrades (team)
+    Permanent group stat bonus (+speedMod, +strengthMod, ..., +gatherBonusMod, +sabotageBonusMod)
+    Unlock more team shop items
+  Shop (individual)
+    Temporary stat boost (powerful) (+speed, +strength, ...)
+    Attribute flagging (turn on abilities) (minigame countdown timer)
+  Shop (team)
+    Temporary group stat boost (powerful) (+speedMod, +strengthMod, ..., +gatherBonusMod, +sabotageBonusMod)
+
+Item Names
+  Berserk Idlers - Double idle CPS
+
+Minigames
+  Global event every hour (random within timeframe)
+    All players click or type a phrase, team with most (per capita) wins minigame, team luck is included (random number between 0 and luck?)
+  List participating players and their contributed power points
+
+Minigame Prizes
+  Temporary strength boost
+  Temporary speed boost
+  Temporary strength and speed boost
+  Temporary strength debuff (vote for target)
+  Temporary speed debuff (vote for target)
+  Give nightmares (strength and speed debuff) (vote for target)
+  Individual power points returned to winners
+  Power points to each active participant
+
+Individual Cooldowns
+  Temporary strength boost
+  Temporary speed boost
+  Harvest power points
+
+Team Cooldowns
+  Initiate team attack vs another team (costs resources? - no, keep battles constant and free)
+    Team members have a clicking war (offense vs defense - idlers contribute a bit as well).  To have it be fair, it's based on total offense per capita vs base defense + defense per capita. Power points may be used, as is luck.  If successful, target team loses resources/buildings.
+      If a minigame or another team attack is going on, queue the event.
+  Game of Luck
+    The team's luck is pit against a randomly generated number.  Win, get some resources. Lose, lose some resources.
+
+Displayable Metrics
+  Total cooldowns used
+  Resources gathered
+  Resources sabotaged
+  Total minigame wins
+  List players on teams
+  Leaderboards (daily, weekly, overall, etc.)
+
+
+Database data
+  Player
+    UserID
+    Time idle
+    Total cooldowns used (of each type)
+    Minigame participations (of each type)
+    Individual items purchased (count of each type)
+    Team switches
+    Skill improvements (permanent only, like items - one for each skill)
+    Power points
+    Experience points
+
+  PlayerState
+    EndOfCooldown (when player is allowed to click cooldown - one for each cooldown)
+    EndOfTeamSwitch
+    StrengthModifier
+    SpeedModifier
+    MoreModifiers(one for each attribute if necessary)
+
+Protection
+  Client-side CPS checks
+  Server-side CPS based on...
+    Session - GTFO, terrible idea
+    Account - Mandates registration, players can still use diff accnts under diff browsers
+    IP - bros cant play
+
+
+XP System
+  Higher ranks earn emblems? Diff. team color hues?
+  Gain XP
+    Each successful cooldown used
+    Actively participating in a minigame (winning player points > losing player points)
+    Each X minutes idling
+  Ranks (TBD)
+    0 - Rank 0 (coming soon)
+    100 - Rank 1 (coming soon)
+    200 - Rank 2 ...
+    400 - Rank 3 ...
+    800 - Rank 4 ...
+    ...
+
+
+Tech Stack
+  ReactiveMongoDB
+  Websockets
+  Nginx
+  SecureSocial
+
+
+Tech Notes
+  While caching player data in memory would make the server stateful, it may very well be worth the performance benefits until mutliple app instances need to be started
+
+
+
+
+
+Thinking-through-notes
+  Items taking effect:
+    "SB.effectedBy(item: Item)" - would make SB more than just a simple data structure.  *Might* be considered more OOP, but an necessary addition.
+    Could convert SB.effects to a priortyQueue, and items define an order to follow when adding them to the queue (Beginning, Middle, End, Neutral).  This would allow items that act as multipliers without having to have separate stats (speed and speedMod).
+    Could instantiate items and add them to queues.  Would make keeping track of levels slightly easier (level is stored within item instead of requiring a "key").  However, "key" would still need to be implemented in order to serialize.  Additionally, a "key" in either method would allow items to be "saved" by always keeping them in the effects list.  That way, no magic number is stored as user data, and user data can be safely rebuilt using these "raw" values.  Instantiated items could manage their own logic without having to be passed through a "key", and could even access the rest of the system (output messages, check full list of items, etc.), whereas non-instantiated items would only be passed the statsblock they are allowed to change (unless more info is passed through, but then it increases the amount of data being passed in and out of everything).  However, instantiated items could be considered unsafe because they could access the rest of the system knowing the owning player's ID and potentially other info.
+
+
+
+Scaling:
+  Team messages get routed to a single "teamDecisionAndManagement" instance.  Sends status messages to all (via pubsub) instances so they know the results of team decisions.
+  Decouple player inventory handling by forwarding playerWS calls to a dedicated "playerInventory" instance.  Handles groups of players (1-100, 200-300, etc. - or per region) so as not to overload.
+  Having one "playerInventory" instance per region of players, rather than one *per* player would mean players could affect eachother more safely *and* it would mean less actors (less threads and generally less overhead), though it risks longer backlog.  Backlog would be mitigated by more CPU time for this one actor.
+

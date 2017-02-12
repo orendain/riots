@@ -1,0 +1,44 @@
+// Footer
+// ----------------------------
+$footer-height: 60px;
+$gap-height: $footer-height;
+
+#footer-wrapper {
+  @include background($gray-darker);
+}
+
+#footer {
+  height: $footer-height;
+  color: $gray;
+  text-transform: uppercase;
+  padding-top: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  .madeby {
+    text-align: right;
+  }
+
+  a {
+    color: $gray-light;
+
+    &:hover,
+    &:focus {
+      color: $gray-lighter;
+      text-decoration: none;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+#body-wrapper {
+  min-height: 100%;
+  margin-bottom: -$gap-height;
+}
+
+#push {
+  height: $gap-height;
+}

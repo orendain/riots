@@ -1,0 +1,15 @@
+@(contactForm: Form[model.ContactForm])(implicit token: play.filters.csrf.CSRF.Token, messages: Messages)
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(helpers.bootstrapInputField.f) }
+
+<div id="login-panel">
+  @form(routes.Contact.submitContact, 'id -> "contact-form") {
+    @CSRF.formField
+    @inputText(contactForm("email"), '_label -> "_none", 'placeholder -> "Email")
+    @inputText(contactForm("subject"), '_label -> "_none", 'placeholder -> "Subject")
+    @textarea(contactForm("message"), '_label -> "_none", 'placeholder -> "Message")
+    <button type="submit" class="btn btn-big btn-submit">Send</button>
+  }
+</div>

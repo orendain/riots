@@ -1,0 +1,18 @@
+<div id="tabbed-panel">
+  <div class="row">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#tab_cooldowns" aria-controls="tab_cooldowns" role="tab" data-toggle="tab">Cooldowns</a></li>
+      <li role="presentation"><a href="#tab_upgrades" aria-controls="tab_upgrades" role="tab" data-toggle="tab">Upgrades</a></li>
+      <li role="presentation"><a href="#tab_shop" aria-controls="tab_shop" role="tab" data-toggle="tab">Shop</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="tab_cooldowns">@cooldownPanel()</div>
+      <div role="tabpanel" class="tab-pane" id="tab_upgrades">@upgradePanel()</div>
+      <div role="tabpanel" class="tab-pane" id="tab_shop">@shopPanel()</div>
+    </div>
+
+  </div>
+</div>
